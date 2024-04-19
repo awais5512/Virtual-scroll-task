@@ -7,7 +7,8 @@ async function fetchUniversities(): Promise<University[]> {
   return data;
 }
 
-interface University {
+export interface University {
+  id?: number,
   web_pages: string[],
   alpha_two_code: string,
   domains: string[],
