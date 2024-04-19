@@ -5,6 +5,13 @@
   text-align: center;
 }
 
+.sectionTitle {
+  background: #fff;
+  color: #000;
+  text-align: left;
+  padding: 1rem;
+}
+
 .spinnerWrapper {
   display: flex;
   align-items: center;
@@ -13,7 +20,7 @@
 }
 
 .listWrapper {
-  width: 768px;
+  width: 500px;
   margin-block: 2rem;
 }
 
@@ -26,9 +33,33 @@
   justify-content: center;
 }
 
-@media only screen and (max-width: 768px) {
-  .listWrapper {
-    width: 400px;
+/* Custom virtual list styles */
+.virtual-list {
+  width: 500px;
+  background: #ff5e00;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.virtual-list-item-wrapper {
+  position: relative;
+}
+
+.virtual-list .virtual-list-item {
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  overflow: hidden;
+  width: 100% !important;
+}
+
+@media (prefers-color-scheme: light) {
+  .sectionTitle {
+    background: #00ff2f;
   }
 }
 
