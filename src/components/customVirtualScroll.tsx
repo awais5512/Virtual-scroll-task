@@ -69,7 +69,6 @@ export const CustomVirtualScroll = ({
 								className='virtual-list-item'
 								key={index}
 								style={{
-									width: itemHeight,
 									height: itemHeight,
 									transform: getItemOffsetStyle(item.id as number),
 								}}
