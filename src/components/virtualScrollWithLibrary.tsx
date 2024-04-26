@@ -1,9 +1,10 @@
 import { FixedSizeList as List } from 'react-window'
-import { useAppStore } from "../store/universities.store";
+import { useUniversitiesStore } from "../store/universities.store";
+import AutoSizer from "react-virtualized-auto-sizer";
 import { CSSProperties } from 'react';
 
 const Row = ({ index, style }: { index: number, style: CSSProperties }) => {
-  const { universities } = useAppStore();
+  const { universities } = useUniversitiesStore();
   const university = universities[index];
 
   return (
@@ -12,18 +13,22 @@ const Row = ({ index, style }: { index: number, style: CSSProperties }) => {
 }
 
 export const VirtualScrollWithLibrary = () => {
-	const { universities } = useAppStore();
+	const { universities } = useUniversitiesStore();
 
 	return (
 		<article className="listWrapper">
-			<List
-				height={400}
-				itemCount={universities.length}
-				itemSize={50}
-				width="100%"
-			>
-				{Row}
-			</List>
+			<AutoSizer>
+				{({ height, width }) => (
+					<List
+						height={height}
+						itemCount={universities.length}
+						itemSize={50}
+						width={width}
+					>
+						{Row}
+					</List>
+				)}
+			</AutoSizer>
 		</article>
 	)
 }
