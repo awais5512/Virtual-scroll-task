@@ -1,11 +1,10 @@
-
 .loader {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 48px;
-  height: 48px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   position: relative;
   animation: rotate 1s linear infinite
@@ -22,7 +21,7 @@
 }
 
 @keyframes rotate {
-  100%   {transform: rotate(360deg)}
+  100% {transform: rotate(360deg)}
 }
 
 @keyframes prixClipFix {
