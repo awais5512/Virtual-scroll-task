@@ -1,5 +1,5 @@
 import { FixedSizeList as List } from 'react-window'
-import { useUniversitiesStore } from "../../store/universities.store";
+import { useUniversitiesStore } from "../store/universities.store";
 import AutoSizer from "react-virtualized-auto-sizer";
 import { CSSProperties } from 'react';
 import InfiniteLoader from "react-window-infinite-loader";
