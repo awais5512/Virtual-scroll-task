@@ -1,9 +1,10 @@
 import { useUniversitiesStore } from "../store/universities.store";
-import { VirtualScrollWithLibrary } from '../components/virtualScrollWithLibrary';
 import { CustomVirtualScroll } from '../components/customVirtualScroll';
 import { SectionTitle } from '../components/sectionTitle/sectionTitle';
 import { ErrorText } from "../components/errorText";
 import { LoadingWrapper } from "../components/loadingWrapper";
+import { InfiniteLoaderVariant } from "../components/infiniteLoaderVariant";
+import { VariableVirtualScrollVariant } from "../components/variableVirtualScrollVariant";
 
 export const AppRenderer = () => {
   const {
@@ -21,13 +22,14 @@ export const AppRenderer = () => {
       {error && <ErrorText text={`Error while fetching: ${error}`} />}
 
       <SectionTitle>
-        Implementation with React-window Library
+        Implementation with React-window Library with Infinite Scrolling
       </SectionTitle>
-      {universities.length > 0 && <VirtualScrollWithLibrary />}
+      {universities.length > 0 && <InfiniteLoaderVariant />}
 
-      <SectionTitle>
-        Custom Implementation
-      </SectionTitle>
+      <SectionTitle>Implementation of Variable Size List</SectionTitle>
+      {universities.length > 0 && <VariableVirtualScrollVariant />}
+
+      <SectionTitle>Custom Implementation of Virtual scroll</SectionTitle>
       {universities.length > 0 && (
         <CustomVirtualScroll
           itemHeight={60}
