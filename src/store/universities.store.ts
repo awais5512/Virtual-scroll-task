@@ -16,14 +16,14 @@ export interface University {
   country: string,
 }
 
-interface AppStoreProps {
+interface UniversitiesStoreProps {
   error: string | null,
   loading: boolean,
   universities: University[];
   fetchUniversities: () => void;
 }
 
-export const useAppStore = create<AppStoreProps>((set) => ({
+export const useUniversitiesStore = create<UniversitiesStoreProps>((set) => ({
   error: null,
   loading: false,
   universities: [],

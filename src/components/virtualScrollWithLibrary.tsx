@@ -1,5 +1,5 @@
 import { FixedSizeList as List } from 'react-window'
-import { useAppStore } from "../App.store";
+import { useAppStore } from "../store/universities.store";
 import { CSSProperties } from 'react';
 
 const Row = ({ index, style }: { index: number, style: CSSProperties }) => {

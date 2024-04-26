@@ -1,5 +1,5 @@
 import { UIEvent, useEffect, useMemo, useRef, useState } from "react";
-import { University } from "../App.store";
+import { University } from "../store/universities.store";
 
 interface ListProps {
 	height?: number,
