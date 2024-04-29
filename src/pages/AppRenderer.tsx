@@ -17,7 +17,7 @@ export const AppRenderer = () => {
   return (
     <>
       {loading && <LoadingWrapper />}
-      <button className="fetchQuotesBtn" onClick={fetchUniversities}>Fetch Universities</button>
+      <button onClick={fetchUniversities}>Fetch Universities</button>
 
       {error && <ErrorText text={`Error while fetching: ${error}`} />}
 
