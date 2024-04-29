@@ -1,4 +1,4 @@
-import { CSSProperties, RefObject, useCallback, useEffect, useRef } from 'react';
+import { CSSProperties, RefObject, useEffect, useRef } from 'react';
 import { VariableSizeList as List } from 'react-window'
 import { useUniversitiesStore } from "../store/universities.store";
 import AutoSizer from "react-virtualized-auto-sizer";
@@ -9,6 +9,7 @@ export const VariableVirtualScrollVariant = () => {
 	const rowHeights = useRef<{ [key: number]: number }>({});
 
 	function getRowHeight(index: number) {
+		console.log(rowHeights.current[index] + 8 || 40);
 		return rowHeights.current[index] + 8 || 40;
 	}
 
@@ -25,29 +26,22 @@ export const VariableVirtualScrollVariant = () => {
 
 		return (
 			<div
-				ref={rowRef}
 				key={university.domains[0]}
 				className="universityTitle bg-blue-300"
 				style={style}>
-				{university.name}
+					<span ref={rowRef}>
+						{university.name}
+					</span>
 			</div>
 		)
 	}
 
 	function setRowHeight(index: number, size: number) {
-		listRef?.current?.resetAfterIndex(0);
-		rowHeights.current = { ...rowHeights.current, [index]: size };
-	}
-
-	const scrollToBottom = useCallback(() => {
-		listRef?.current?.scrollToItem(universities.length - 1, "end");
-	}, [universities.length]);
-
-	useEffect(() => {
-		if (universities.length > 0) {
-			scrollToBottom();
+		if (listRef?.current) {
+			listRef.current.resetAfterIndex(0);
+			rowHeights.current = { ...rowHeights.current, [index]: size };
 		}
-	}, [scrollToBottom, universities]);
+	}
 
 	return (
 		<article className='listWrapper mt-24'>
