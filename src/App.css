@@ -1,0 +1,67 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.spinnerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.listWrapper {
+  height: 50vh;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+.universityTitle {
+  white-space: nowrap;
+  background-color: #1a1a1a;
+  border-block: 2px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.universityTitle.bg-blue-300 {
+  background-color: #75e505;
+  color: #000;
+  border-block: 2px solid #000000;
+}
+
+/* Custom virtual list styles */
+.virtual-list {
+  width: 100% !important;
+  background: #ff5e00;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.virtual-list-item-wrapper {
+  position: relative;
+}
+
+.virtual-list .virtual-list-item {
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+}
+
+@media (prefers-color-scheme: light) {
+  .sectionTitle {
+    background: #00ff2f;
+  }
+}
+
